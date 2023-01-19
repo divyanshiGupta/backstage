@@ -25,8 +25,8 @@ After installation, the plugin can be used as a Card or as a Page.
 
 ```typescript
 import {
-  GitHubIssuesCard,
-  GitHubIssuesPage,
+  GithubIssuesCard,
+  GithubIssuesPage,
 } from '@backstage/plugin-github-issues';
 
 // To use as a page Plugin needs to be wrapped in EntityLayout.Route
@@ -34,7 +34,7 @@ const RenderGitHubIssuesPage = () => (
   <EntityLayoutWrapper>
     <EntityLayout.Route path="/" title="Overview">
       <EntityLayout.Route path="github-issues" title="GitHub Issues">
-        <GitHubIssuesPage />
+        <GithubIssuesPage />
       </EntityLayout.Route>
     <EntityLayout.Route />
   </EntityLayoutWrapper>
@@ -46,7 +46,7 @@ const RenderGitHubIssuesCard = () => (
     <EntityLayout.Route path="/" title="Overview">
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <GitHubIssuesCard />
+          <GithubIssuesCard />
         </Grid>
       </Grid>
     <EntityLayout.Route />
@@ -56,7 +56,7 @@ const RenderGitHubIssuesCard = () => (
 
 ## Configuration
 
-Both `GitHubIssuesPage` and `GitHubIssuesCard` provide default configuration. It is ready to use out of the box.
+Both `GithubIssuesPage` and `GithubIssuesCard` provide default configuration. It is ready to use out of the box.
 However, you can configure the plugin with props:
 
 - `itemsPerPage: number = 10` - Issues in the list are paginated, number of issues on a single page is controlled with this prop
@@ -67,7 +67,7 @@ However, you can configure the plugin with props:
 ### `filterBy` and `orderBy` example
 
 ```ts
-<GitHubIssuesCard
+<GithubIssuesCard
   filterBy={{
     labels: ['bug', 'enhancement'],
     states: ['OPEN'],
